@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbCPSModelStoreContainer" CdmEntityContainer="dbCPSEntities">
+    <EntitySetMapping Name="CASAL">
+      <EntityTypeMapping TypeName="dbCPSModel.CASAL">
+        <MappingFragment StoreEntitySet="CASAL">
+          <ScalarProperty Name="IDCASAL" ColumnName="IDCASAL" />
+          <ScalarProperty Name="IDMARIDO" ColumnName="IDMARIDO" />
+          <ScalarProperty Name="IDESPOSA" ColumnName="IDESPOSA" />
+          <ScalarProperty Name="FUNCAO_ATUAL" ColumnName="FUNCAO_ATUAL" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FUNCAO">
+      <EntityTypeMapping TypeName="dbCPSModel.FUNCAO">
+        <MappingFragment StoreEntitySet="FUNCAO">
+          <ScalarProperty Name="IDFUNCAO" ColumnName="IDFUNCAO" />
+          <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GRUPO">
+      <EntityTypeMapping TypeName="dbCPSModel.GRUPO">
+        <MappingFragment StoreEntitySet="GRUPO">
+          <ScalarProperty Name="IDGRUPO" ColumnName="IDGRUPO" />
+          <ScalarProperty Name="LIDER" ColumnName="LIDER" />
+          <ScalarProperty Name="LIDER_EM_TREINAMENTO" ColumnName="LIDER_EM_TREINAMENTO" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="SEMESTRE" ColumnName="SEMESTRE" />
+          <ScalarProperty Name="ANO" ColumnName="ANO" />
+          <ScalarProperty Name="TIPOGRUPO" ColumnName="TIPOGRUPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARTICIPANTE">
+      <EntityTypeMapping TypeName="dbCPSModel.PARTICIPANTE">
+        <MappingFragment StoreEntitySet="PARTICIPANTE">
+          <ScalarProperty Name="IDPARTICIPANTE" ColumnName="IDPARTICIPANTE" />
+          <ScalarProperty Name="IDCASAL" ColumnName="IDCASAL" />
+          <ScalarProperty Name="IDGRUPO" ColumnName="IDGRUPO" />
+          <ScalarProperty Name="FUNCAO_NA_EPOCA" ColumnName="FUNCAO_NA_EPOCA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PESSOA">
+      <EntityTypeMapping TypeName="dbCPSModel.PESSOA">
+        <MappingFragment StoreEntitySet="PESSOA">
+          <ScalarProperty Name="IDPESSOA" ColumnName="IDPESSOA" />
+          <ScalarProperty Name="NUMERO_DE_MEMBRO" ColumnName="NUMERO_DE_MEMBRO" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="DATANASC" ColumnName="DATANASC" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="TELEFONE_FIXO" ColumnName="TELEFONE_FIXO" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOGRUPO">
+      <EntityTypeMapping TypeName="dbCPSModel.TIPOGRUPO">
+        <MappingFragment StoreEntitySet="TIPOGRUPO">
+          <ScalarProperty Name="IDTIPOGRUPO" ColumnName="IDTIPOGRUPO" />
+          <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

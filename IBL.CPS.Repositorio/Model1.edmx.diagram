@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03a25d06259d4113b9c71da0d0f32154" Name="Diagram1">
+        <EntityTypeShape EntityType="dbCPSModel.CASAL" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCPSModel.FUNCAO" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCPSModel.GRUPO" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCPSModel.PARTICIPANTE" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCPSModel.PESSOA" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbCPSModel.TIPOGRUPO" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="dbCPSModel.fk_CASAL_FUNCAO_ATUAL" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_CASAL_IDESPOSA" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_CASAL_IDMARIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_GRUPO_LIDER" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_GRUPO_TIPOGRUPO" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_PARTICIPANTE_IDCASAL" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_PARTICIPANTE_FUNCAO_NA_EPOCA" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_GRUPO_LIDER_EM_TREINAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="dbCPSModel.fk_PARTICIPANTE_IDGRUPO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

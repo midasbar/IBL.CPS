@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbCPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CASAL">
+    <Key>
+      <PropertyRef Name="IDCASAL" />
+    </Key>
+    <Property Name="IDCASAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDMARIDO" Type="int" Nullable="false" />
+    <Property Name="IDESPOSA" Type="int" Nullable="false" />
+    <Property Name="FUNCAO_ATUAL" Type="int" Nullable="false" />
+    <Property Name="UF" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CIDADE" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="BAIRRO" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ENDERECO" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="COMPLEMENTO" Type="varchar" MaxLength="10" />
+    <Property Name="CEP" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="FUNCAO">
+    <Key>
+      <PropertyRef Name="IDFUNCAO" />
+    </Key>
+    <Property Name="IDFUNCAO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GRUPO">
+    <Key>
+      <PropertyRef Name="IDGRUPO" />
+    </Key>
+    <Property Name="IDGRUPO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LIDER" Type="int" Nullable="false" />
+    <Property Name="LIDER_EM_TREINAMENTO" Type="int" />
+    <Property Name="UF" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="CIDADE" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="BAIRRO" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ENDERECO" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="10" />
+    <Property Name="COMPLEMENTO" Type="varchar" MaxLength="10" />
+    <Property Name="CEP" Type="varchar" MaxLength="10" />
+    <Property Name="SEMESTRE" Type="int" Nullable="false" />
+    <Property Name="ANO" Type="int" Nullable="false" />
+    <Property Name="TIPOGRUPO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARTICIPANTE">
+    <Key>
+      <PropertyRef Name="IDPARTICIPANTE" />
+    </Key>
+    <Property Name="IDPARTICIPANTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCASAL" Type="int" Nullable="false" />
+    <Property Name="IDGRUPO" Type="int" Nullable="false" />
+    <Property Name="FUNCAO_NA_EPOCA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PESSOA">
+    <Key>
+      <PropertyRef Name="IDPESSOA" />
+    </Key>
+    <Property Name="IDPESSOA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NUMERO_DE_MEMBRO" Type="int" Nullable="false" />
+    <Property Name="SEXO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DATANASC" Type="date" Nullable="false" />
+    <Property Name="RG" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="TELEFONE_FIXO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CELULAR" Type="varchar" MaxLength="10" />
+    <Property Name="E_MAIL" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TIPOGRUPO">
+    <Key>
+      <PropertyRef Name="IDTIPOGRUPO" />
+    </Key>
+    <Property Name="IDTIPOGRUPO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_CASAL_FUNCAO_ATUAL">
+    <End Role="FUNCAO" Type="Self.FUNCAO" Multiplicity="1" />
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FUNCAO">
+        <PropertyRef Name="IDFUNCAO" />
+      </Principal>
+      <Dependent Role="CASAL">
+        <PropertyRef Name="FUNCAO_ATUAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CASAL_IDESPOSA">
+    <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="IDPESSOA" />
+      </Principal>
+      <Dependent Role="CASAL">
+        <PropertyRef Name="IDESPOSA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CASAL_IDMARIDO">
+    <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PESSOA">
+        <PropertyRef Name="IDPESSOA" />
+      </Principal>
+      <Dependent Role="CASAL">
+        <PropertyRef Name="IDMARIDO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GRUPO_LIDER">
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="1" />
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CASAL">
+        <PropertyRef Name="IDCASAL" />
+      </Principal>
+      <Dependent Role="GRUPO">
+        <PropertyRef Name="LIDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GRUPO_LIDER_EM_TREINAMENTO">
+    <End Role="TIPOGRUPO" Type="Self.TIPOGRUPO" Multiplicity="0..1" />
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOGRUPO">
+        <PropertyRef Name="IDTIPOGRUPO" />
+      </Principal>
+      <Dependent Role="GRUPO">
+        <PropertyRef Name="LIDER_EM_TREINAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GRUPO_TIPOGRUPO">
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="1" />
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CASAL">
+        <PropertyRef Name="IDCASAL" />
+      </Principal>
+      <Dependent Role="GRUPO">
+        <PropertyRef Name="TIPOGRUPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PARTICIPANTE_FUNCAO_NA_EPOCA">
+    <End Role="FUNCAO" Type="Self.FUNCAO" Multiplicity="1" />
+    <End Role="PARTICIPANTE" Type="Self.PARTICIPANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FUNCAO">
+        <PropertyRef Name="IDFUNCAO" />
+      </Principal>
+      <Dependent Role="PARTICIPANTE">
+        <PropertyRef Name="FUNCAO_NA_EPOCA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PARTICIPANTE_IDCASAL">
+    <End Role="CASAL" Type="Self.CASAL" Multiplicity="1" />
+    <End Role="PARTICIPANTE" Type="Self.PARTICIPANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CASAL">
+        <PropertyRef Name="IDCASAL" />
+      </Principal>
+      <Dependent Role="PARTICIPANTE">
+        <PropertyRef Name="IDCASAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PARTICIPANTE_IDGRUPO">
+    <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+    <End Role="PARTICIPANTE" Type="Self.PARTICIPANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRUPO">
+        <PropertyRef Name="IDGRUPO" />
+      </Principal>
+      <Dependent Role="PARTICIPANTE">
+        <PropertyRef Name="IDGRUPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbCPSModelStoreContainer">
+    <EntitySet Name="CASAL" EntityType="Self.CASAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FUNCAO" EntityType="Self.FUNCAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRUPO" EntityType="Self.GRUPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARTICIPANTE" EntityType="Self.PARTICIPANTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOGRUPO" EntityType="Self.TIPOGRUPO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_CASAL_FUNCAO_ATUAL" Association="Self.fk_CASAL_FUNCAO_ATUAL">
+      <End Role="FUNCAO" EntitySet="FUNCAO" />
+      <End Role="CASAL" EntitySet="CASAL" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CASAL_IDESPOSA" Association="Self.fk_CASAL_IDESPOSA">
+      <End Role="PESSOA" EntitySet="PESSOA" />
+      <End Role="CASAL" EntitySet="CASAL" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CASAL_IDMARIDO" Association="Self.fk_CASAL_IDMARIDO">
+      <End Role="PESSOA" EntitySet="PESSOA" />
+      <End Role="CASAL" EntitySet="CASAL" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GRUPO_LIDER" Association="Self.fk_GRUPO_LIDER">
+      <End Role="CASAL" EntitySet="CASAL" />
+      <End Role="GRUPO" EntitySet="GRUPO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GRUPO_LIDER_EM_TREINAMENTO" Association="Self.fk_GRUPO_LIDER_EM_TREINAMENTO">
+      <End Role="TIPOGRUPO" EntitySet="TIPOGRUPO" />
+      <End Role="GRUPO" EntitySet="GRUPO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GRUPO_TIPOGRUPO" Association="Self.fk_GRUPO_TIPOGRUPO">
+      <End Role="CASAL" EntitySet="CASAL" />
+      <End Role="GRUPO" EntitySet="GRUPO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PARTICIPANTE_FUNCAO_NA_EPOCA" Association="Self.fk_PARTICIPANTE_FUNCAO_NA_EPOCA">
+      <End Role="FUNCAO" EntitySet="FUNCAO" />
+      <End Role="PARTICIPANTE" EntitySet="PARTICIPANTE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PARTICIPANTE_IDCASAL" Association="Self.fk_PARTICIPANTE_IDCASAL">
+      <End Role="CASAL" EntitySet="CASAL" />
+      <End Role="PARTICIPANTE" EntitySet="PARTICIPANTE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PARTICIPANTE_IDGRUPO" Association="Self.fk_PARTICIPANTE_IDGRUPO">
+      <End Role="GRUPO" EntitySet="GRUPO" />
+      <End Role="PARTICIPANTE" EntitySet="PARTICIPANTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

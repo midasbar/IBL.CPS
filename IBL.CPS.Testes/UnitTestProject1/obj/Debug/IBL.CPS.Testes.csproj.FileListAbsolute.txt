@@ -1,0 +1,14 @@
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\EntityFramework.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.Controlador.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.DTO.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.Repositorio.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.Controlador.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.DTO.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\EntityFramework.xml
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\bin\Debug\IBL.CPS.Repositorio.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\obj\Debug\IBL.CPS.Testes.csprojResolveAssemblyReference.cache
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Testes\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

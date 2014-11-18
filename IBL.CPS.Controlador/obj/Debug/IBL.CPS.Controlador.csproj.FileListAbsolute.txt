@@ -10,3 +10,15 @@ C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Controlador
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.csprojResolveAssemblyReference.cache
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.dll
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.Controlador.dll.config
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.Controlador.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.Controlador.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\EntityFramework.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.DTO.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.Repositorio.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.DTO.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\IBL.CPS.Repositorio.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\bin\Debug\EntityFramework.xml
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.Controlador\obj\Debug\IBL.CPS.Controlador.pdb

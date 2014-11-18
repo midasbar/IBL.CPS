@@ -63,6 +63,7 @@
     <Compile Include="IBL.CPS.Testes.TipoGrupo.cs" />
     <Compile Include="IBL.CPS.Testes.Funcao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IBL.CPS.Testes._PreparaBanco.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\IBL.CPS.Controlador\IBL.CPS.Controlador.csproj">
@@ -72,6 +73,10 @@
     <ProjectReference Include="..\..\IBL.CPS.DTO\IBL.CPS.DTO.csproj">
       <Project>{5b7cef0d-12ee-46c4-8971-4959338991ce}</Project>
       <Name>IBL.CPS.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IBL.CPS.Repositorio\IBL.CPS.Repositorio.csproj">
+      <Project>{db834f2d-0d2c-479c-a7c1-2d017ea273c3}</Project>
+      <Name>IBL.CPS.Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

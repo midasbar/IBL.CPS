@@ -3,3 +3,7 @@ C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.DTO\bin\Deb
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.DTO\obj\Debug\IBL.CPS.DTO.csprojResolveAssemblyReference.cache
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.DTO\obj\Debug\IBL.CPS.DTO.dll
 C:\Users\Andre\documents\visual studio 2013\Projects\IBL.CPS\IBL.CPS.DTO\obj\Debug\IBL.CPS.DTO.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.DTO\bin\Debug\IBL.CPS.DTO.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.DTO\bin\Debug\IBL.CPS.DTO.pdb
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.DTO\obj\Debug\IBL.CPS.DTO.dll
+C:\Users\Andre\Documents\GitHub\IBL.CPS\IBL.CPS.DTO\obj\Debug\IBL.CPS.DTO.pdb

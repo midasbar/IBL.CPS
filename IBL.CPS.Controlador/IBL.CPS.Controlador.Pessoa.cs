@@ -37,7 +37,7 @@ namespace IBL.CPS.Controlador
             {
                 AtualizarObjeto(ct, dto, ref func);
                 //ct.PESSOA.AddObject(func);
-                ((IObjectContextAdapter)ct.PESSOA).ObjectContext.AddObject("PESSOA", func);
+                ((IObjectContextAdapter)ct).ObjectContext.AddObject("PESSOA", func);
                 ct.SaveChanges();
             }
         }

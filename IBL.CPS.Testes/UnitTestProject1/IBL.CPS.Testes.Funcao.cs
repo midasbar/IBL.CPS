@@ -7,7 +7,7 @@ using IBL.CPS.DTO;
 namespace IBL.CPS.Testes
 {
     [TestClass]
-    public class TestesCasal
+    public class TestesFuncao
     {
         [TestMethod]
         public void TesteObterLista()

@@ -39,7 +39,7 @@ namespace IBL.CPS.Controlador
             {
                 AtualizarObjeto(ct, dto, ref func);
                 //ct.TIPOGRUPO.AddObject(func);
-                ((IObjectContextAdapter)ct.TIPOGRUPO).ObjectContext.AddObject("TIPOGRUPO", func);
+                ((IObjectContextAdapter)ct).ObjectContext.AddObject("TIPOGRUPO", func);
                 ct.SaveChanges();
             }
         }

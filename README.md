@@ -7,8 +7,6 @@ Projeto desenvolvido junto a Marcelo Rocha com o ojetivo de estudar o desenvolvi
 
 Projeto é composto de 3 dll para o backend :
 
-Repositorio
-Controler
-Dto
+Repositorio, Controler e Dto
 
 E agora estamos implementando a dll para testar os metodos desenvolvidos.

@@ -11,14 +11,14 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteObterLista()
         {
-            var l = ControladorTipoGrupo.ObterLista();
+            var l = ControladorTipoGrupo.ObterLista(null);
             Assert.IsTrue(l.Count == 0);
         }
 
         [TestMethod]
         public void TesteIncluir()
         {
-            var l = ControladorTipoGrupo.ObterLista();
+            var l = ControladorTipoGrupo.ObterLista(null);
 
             var qi = l.Count;
 
@@ -29,7 +29,7 @@ namespace IBL.CPS.Testes
                 ControladorTipoGrupo.Incluir(d);
             }
 
-            l = ControladorTipoGrupo.ObterLista();
+            l = ControladorTipoGrupo.ObterLista(null);
 
             Assert.AreEqual(qi + 10, l.Count);
         }
@@ -37,7 +37,7 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteExcluir()
         {
-            var l = ControladorTipoGrupo.ObterLista();
+            var l = ControladorTipoGrupo.ObterLista(null);
 
             var qi = l.Count;
 
@@ -51,7 +51,7 @@ namespace IBL.CPS.Testes
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
             }
 
-            l = ControladorTipoGrupo.ObterLista();
+            l = ControladorTipoGrupo.ObterLista(null);
             Assert.AreEqual(qi, l.Count);
         }
 

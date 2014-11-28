@@ -16,7 +16,7 @@ namespace IBL.CPS.Repositorio
         {
             try
             {
-                var prodKey = new EntityKey("dbCPSEntities." + entitySetName, "IDFUNCAO", Id);
+                var prodKey = new EntityKey("dbCPSEntities." + entitySetName, NomeColunaChave, Id);
                 return ((IObjectContextAdapter)ct).ObjectContext.GetObjectByKey(prodKey);
             }
             catch (ObjectNotFoundException exObjNotFound)

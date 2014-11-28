@@ -145,9 +145,14 @@ namespace IBL.CPS.Controlador
 
         static public void AtualizarObjeto(dbCPSEntities ct, ParticipanteDTO dto, ref PARTICIPANTE func)
         {
-            func.IDCASAL = dto.IDCASAL;
-            func.IDGRUPO = dto.IDGRUPO;
-            func.FUNCAO_NA_EPOCA = dto.FUNCAO_NA_EPOCA;
+            if (dto.IDCASAL > 0)
+                func.CASAL = ControladorCasal.ObterEntidade(ct, dto.IDCASAL);
+
+            if (dto.IDGRUPO > 0)
+                func.GRUPO = ControladorGrupo.ObterEntidade(ct, dto.IDGRUPO);
+
+            if (dto.FUNCAO_NA_EPOCA > 0)
+                func.FUNCAO = ControladorFuncao.ObterEntidade(ct, dto.FUNCAO_NA_EPOCA);
         }
     }
 }

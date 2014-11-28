@@ -13,8 +13,7 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorCasal
     {
-        static public List<CasalDTO>
-        ObterLista()
+        static public List<CasalDTO> ObterLista()
         {
             IQueryable<CASAL> e = null;
             List<CasalDTO> r = null;
@@ -99,7 +98,7 @@ namespace IBL.CPS.Controlador
             }
         }
 
-        static public CASAL ObterEntidade(dbCPSEntities ct, Int32 Id)
+        static public CASAL ObterEntidade(dbCPSEntities ct, int Id)
         {
             CASAL obj = null;
             obj = (CASAL)RepositorioUtils.ObterObjeto(ct, "CASAL", "IDCASAL" , Id);
@@ -133,6 +132,9 @@ namespace IBL.CPS.Controlador
 
             if (String.IsNullOrEmpty(dto.UF) || String.IsNullOrWhiteSpace(dto.UF))
                 listaErros.AppendLine("A UF deve ser informada.");
+
+            if (dto.UF.Length != 2)
+                listaErros.AppendLine("A UF deve ter dois caracteres.");
 
             if (String.IsNullOrEmpty(dto.CIDADE) || String.IsNullOrWhiteSpace(dto.CIDADE))
                 listaErros.AppendLine("A cidade deve ser informada.");
@@ -185,9 +187,15 @@ namespace IBL.CPS.Controlador
 
         static public void AtualizarObjeto(dbCPSEntities ct, CasalDTO dto, ref CASAL func)
         {
-            func.IDMARIDO = dto.IDMARIDO;
-            func.IDESPOSA = dto.IDESPOSA;
-            func.FUNCAO_ATUAL = dto.FUNCAO_ATUAL;
+            //func.IDMARIDO = dto.IDMARIDO;
+            //func.IDESPOSA = dto.IDESPOSA;
+            //func.FUNCAO_ATUAL = dto.FUNCAO_ATUAL;
+            if (dto.IDMARIDO > 0)
+                func.PESSOA = ControladorPessoa.ObterEntidade(ct, dto.IDMARIDO);
+            if (dto.IDESPOSA > 0)
+                func.PESSOA1 = ControladorPessoa.ObterEntidade(ct, dto.IDESPOSA);
+            if (dto.FUNCAO_ATUAL > 0)
+                func.FUNCAO = ControladorFuncao.ObterEntidade(ct, dto.FUNCAO_ATUAL);
             func.UF = dto.UF;
             func.CIDADE = dto.CIDADE;
             func.BAIRRO = dto.BAIRRO;

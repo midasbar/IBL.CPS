@@ -173,8 +173,10 @@ namespace IBL.CPS.Controlador
 
         static public void AtualizarObjeto(dbCPSEntities ct, GrupoDTO dto, ref GRUPO func)
         {
-            func.LIDER = dto.LIDER;
-            func.LIDER_EM_TREINAMENTO = dto.LIDER_EM_TREINAMENTO;
+            if (dto.LIDER > 0)
+                func.CASAL = ControladorCasal.ObterEntidade(ct, dto.LIDER);
+            if (dto.LIDER_EM_TREINAMENTO > 0)
+                func.CASAL1 = ControladorCasal.ObterEntidade(ct,dto.LIDER_EM_TREINAMENTO.Value);
             func.UF = dto.UF;
             func.CIDADE = dto.CIDADE;
             func.BAIRRO = dto.BAIRRO;
@@ -184,7 +186,8 @@ namespace IBL.CPS.Controlador
             func.CEP = dto.CEP;
             func.SEMESTRE = dto.SEMESTRE;
             func.ANO = dto.ANO;
-            func.TIPOGRUPO = dto.TIPOGRUPO;
+            if (dto.TIPOGRUPO > 0)
+                func.TIPOGRUPO1 = ControladorTipoGrupo.ObterEntidade(ct, dto.TIPOGRUPO);
         }
     }
 }

@@ -13,15 +13,17 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorFuncao
     {
-        static public List<FuncaoDTO>
-        ObterLista()
+        static public List<FuncaoDTO> ObterLista(String fdescricao)
         {
             IQueryable<FUNCAO> e = null;
             List<FuncaoDTO> r = null;
             using (var ct = new dbCPSEntities())
             {
                 e = ct.FUNCAO;
-
+                if (!String.IsNullOrEmpty(fdescricao))
+                {
+                    e = e.Where(x => x.DESCRICAO.ToUpper().Contains(fdescricao.ToUpper()));
+                }
                 r = e.ToList().ConvertAll(x => (FuncaoDTO)x);
             }
 

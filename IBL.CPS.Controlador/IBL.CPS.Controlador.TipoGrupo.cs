@@ -12,14 +12,16 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorTipoGrupo
     {
-        static public List<TipoGrupoDTO>
-        ObterLista()
+        static public List<TipoGrupoDTO> ObterLista(String fdesc)
         {
             IQueryable<TIPOGRUPO> e = null;
             List<TipoGrupoDTO> r = null;
             using (var ct = new dbCPSEntities())
             {
                 e = ct.TIPOGRUPO;
+               
+                if (!String.IsNullOrEmpty(fdesc))
+                e = e.Where(x => x.DESCRICAO.ToUpper().Contains(fdesc.ToUpper()));
 
                 r = e.ToList().ConvertAll(x => (TipoGrupoDTO)x);
             }

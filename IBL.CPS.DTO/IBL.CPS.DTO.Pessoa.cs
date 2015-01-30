@@ -11,7 +11,7 @@ namespace IBL.CPS.DTO
     public class PessoaDTO
     {
         [DataMember]
-        public int IDPESSOA { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int NUMERO_DE_MEMBRO { get; set; }
@@ -40,4 +40,9 @@ namespace IBL.CPS.DTO
         [DataMember]
         public string E_MAIL { get; set; }
     }
+    public class PessoaFTR
+    {
+        public string descricao { get; set; }
+    }
+
 }

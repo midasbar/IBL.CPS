@@ -11,7 +11,7 @@ namespace IBL.CPS.DTO
     public class ParticipanteDTO
     {
         [DataMember]
-        public int IDPARTICIPANTE { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int IDCASAL { get; set; }
@@ -22,5 +22,10 @@ namespace IBL.CPS.DTO
         [DataMember]
         public int FUNCAO_NA_EPOCA { get; set; }
 
+    }
+
+    public class ParticipanteFTR
+    {
+        public string descricao { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace IBL.CPS.DTO
     public class GrupoDTO
     {
         [DataMember]
-        public int IDGRUPO { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int LIDER { get; set; }
@@ -49,5 +49,10 @@ namespace IBL.CPS.DTO
         [DataMember]
         public int TIPOGRUPO { get; set; }
 
+    }
+
+    public class GrupoFTR
+    {
+        public string descricao { get; set; }
     }
 }

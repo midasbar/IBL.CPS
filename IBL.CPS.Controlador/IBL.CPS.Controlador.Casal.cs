@@ -13,18 +13,25 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorCasal
     {
-        static public List<CasalDTO> ObterLista()
+        static public List<CasalDTO> ObterLista(CasalFTR Filtro)
         {
             IQueryable<CASAL> e = null;
             List<CasalDTO> r = null;
             using (var ct = new dbCPSEntities())
+
             {
                 e = ct.CASAL;
-
+                if (!String.IsNullOrEmpty(Filtro.descricao))
+                {
+                    e = e.Where(x => x.ENDERECO.ToUpper().Contains(Filtro.descricao.ToUpper()));
+                }
                 r = e.ToList().ConvertAll(x => (CasalDTO)x);
             }
 
             return r;
+        
+
+
 
         }
 
@@ -47,7 +54,7 @@ namespace IBL.CPS.Controlador
 
         static public void Gravar(CasalDTO dto)
         {
-            if (dto.IDCASAL == 0)
+            if (dto.ID == 0)
                 throw new Exception("Objeto não possui Id. Inválido para gravação.");
 
             String erros = null;
@@ -56,10 +63,10 @@ namespace IBL.CPS.Controlador
 
             using (var ct = new dbCPSEntities())
             {
-                CASAL func = ObterEntidade(ct, dto.IDCASAL);
+                CASAL func = ObterEntidade(ct, dto.ID);
 
                 if (func == null)
-                    throw new Exception(String.Format("Id não encontrado {0}.", dto.IDCASAL));
+                    throw new Exception(String.Format("Id não encontrado {0}.", dto.ID));
 
                 AtualizarObjeto(ct, dto, ref func);
                 ct.SaveChanges();
@@ -192,6 +199,7 @@ namespace IBL.CPS.Controlador
             //func.FUNCAO_ATUAL = dto.FUNCAO_ATUAL;
             if (dto.IDMARIDO > 0)
                 func.PESSOA = ControladorPessoa.ObterEntidade(ct, dto.IDMARIDO);
+                dto.NOMEMARIDO = func.PESSOA.NOME;
             if (dto.IDESPOSA > 0)
                 func.PESSOA1 = ControladorPessoa.ObterEntidade(ct, dto.IDESPOSA);
             if (dto.FUNCAO_ATUAL > 0)

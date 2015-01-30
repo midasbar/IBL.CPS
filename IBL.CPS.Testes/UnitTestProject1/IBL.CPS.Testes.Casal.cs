@@ -9,21 +9,21 @@ namespace IBL.CPS.Testes
     public class TestesCasal
     {
         [TestMethod]
-        public void TesteObterLista()
+        public void TesteObterLista(null)
         {
-            var l = ControladorCasal.ObterLista();
+            var l = ControladorCasal.ObterLista(null);
             Assert.IsTrue(l.Count == 0);
         }
 
         [TestMethod]
         public void TesteIncluir()
         {
-            var l = ControladorCasal.ObterLista();
+            var l = ControladorCasal.ObterLista(null);
 
             var qi = l.Count;
             
             //Inclui pessoas usadas no teste...
-            var p = ControladorPessoa.ObterLista();
+            var p = ControladorPessoa.ObterLista(null);
             if (p.Count == 0)
             {
                 var dp = new PessoaDTO();
@@ -68,7 +68,7 @@ namespace IBL.CPS.Testes
                 ControladorCasal.Incluir(d);
             }
 
-            l = ControladorCasal.ObterLista();
+            l = ControladorCasal.ObterLista(null);
 
             Assert.AreEqual(qi + 10, l.Count);
         }
@@ -76,7 +76,7 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteExcluir()
         {
-            var l = ControladorCasal.ObterLista();
+            var l = ControladorCasal.ObterLista(null);
 
             var qi = l.Count;
 
@@ -90,7 +90,7 @@ namespace IBL.CPS.Testes
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
             }
 
-            l = ControladorCasal.ObterLista();
+            l = ControladorCasal.ObterLista(null);
             Assert.AreEqual(qi, l.Count);
         }
 

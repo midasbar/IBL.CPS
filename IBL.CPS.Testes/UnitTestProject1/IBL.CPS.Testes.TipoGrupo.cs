@@ -45,7 +45,7 @@ namespace IBL.CPS.Testes
             {
                 try
                 {
-                    ControladorTipoGrupo.Excluir(d.IDTIPOGRUPO);
+                    ControladorTipoGrupo.Excluir(d.ID);
                     qi--;
                 }
                 catch (Exception ex) { Console.WriteLine(ex.Message); }

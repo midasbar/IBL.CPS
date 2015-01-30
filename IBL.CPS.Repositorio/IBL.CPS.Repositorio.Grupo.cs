@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new GrupoDTO()
             {
-                IDGRUPO = f.IDGRUPO,
+                ID = f.IDGRUPO,
                 LIDER = f.LIDER,
                 //LIDER_EM_TREINAMENTO = f.LIDER_EM_TREINAMENTO.HasValue ? f.LIDER_EM_TREINAMENTO : 0,
                 LIDER_EM_TREINAMENTO = f.LIDER_EM_TREINAMENTO,

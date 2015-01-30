@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new CasalDTO()
             {
-                IDCASAL = f.IDCASAL,
+                ID = f.IDCASAL,
                 IDMARIDO = f.IDMARIDO,
                 IDESPOSA = f.IDESPOSA,
                 FUNCAO_ATUAL = f.FUNCAO_ATUAL,

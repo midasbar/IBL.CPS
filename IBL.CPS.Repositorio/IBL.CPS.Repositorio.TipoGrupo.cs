@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new TipoGrupoDTO()
             {
-                IDTIPOGRUPO = f.IDTIPOGRUPO,
+                ID = f.IDTIPOGRUPO,
                 DESCRICAO = f.DESCRICAO
             };
 

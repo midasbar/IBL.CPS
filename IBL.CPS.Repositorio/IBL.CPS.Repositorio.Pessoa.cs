@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new PessoaDTO()
             {
-                IDPESSOA = f.IDPESSOA,
+                ID = f.IDPESSOA,
                 NUMERO_DE_MEMBRO = f.NUMERO_DE_MEMBRO,
                 SEXO = f.SEXO,
                 NOME = f.NOME,

@@ -13,8 +13,7 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorGrupo
     {
-        static public List<GrupoDTO>
-        ObterLista()
+        static public List<GrupoDTO> ObterLista()
         {
             IQueryable<GRUPO> e = null;
             List<GrupoDTO> r = null;
@@ -46,7 +45,7 @@ namespace IBL.CPS.Controlador
 
         static public void Gravar(GrupoDTO dto)
         {
-            if (dto.IDGRUPO == 0)
+            if (dto.ID== 0)
                 throw new Exception("Objeto não possui Id. Inválido para gravação.");
 
             String erros = null;
@@ -55,10 +54,10 @@ namespace IBL.CPS.Controlador
 
             using (var ct = new dbCPSEntities())
             {
-                GRUPO func = ObterEntidade(ct, dto.IDGRUPO);
+                GRUPO func = ObterEntidade(ct, dto.ID);
 
                 if (func == null)
-                    throw new Exception(String.Format("Id não encontrado {0}.", dto.IDGRUPO));
+                    throw new Exception(String.Format("Id não encontrado {0}.", dto.ID));
 
                 AtualizarObjeto(ct, dto, ref func);
                 ct.SaveChanges();

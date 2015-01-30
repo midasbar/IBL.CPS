@@ -13,16 +13,16 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorFuncao
     {
-        static public List<FuncaoDTO> ObterLista(String fdescricao)
+        static public List<FuncaoDTO> ObterLista(FuncaoFTR Filtro)
         {
             IQueryable<FUNCAO> e = null;
             List<FuncaoDTO> r = null;
             using (var ct = new dbCPSEntities())
             {
                 e = ct.FUNCAO;
-                if (!String.IsNullOrEmpty(fdescricao))
+                if (!String.IsNullOrEmpty(Filtro.descricao))
                 {
-                    e = e.Where(x => x.DESCRICAO.ToUpper().Contains(fdescricao.ToUpper()));
+                    e = e.Where(x => x.DESCRICAO.ToUpper().Contains(Filtro.descricao.ToUpper()));
                 }
                 r = e.ToList().ConvertAll(x => (FuncaoDTO)x);
             }
@@ -46,7 +46,7 @@ namespace IBL.CPS.Controlador
 
         static public void Gravar(FuncaoDTO dto)
         {
-            if (dto.IDFUNCAO == 0)
+            if (dto.ID == 0)
                 throw new Exception("Objeto não possui Id. Inválido para gravação.");
 
             String erros = null;
@@ -55,10 +55,10 @@ namespace IBL.CPS.Controlador
 
             using (var ct = new dbCPSEntities())
             {
-                FUNCAO func = ObterEntidade(ct, dto.IDFUNCAO);
+                FUNCAO func = ObterEntidade(ct, dto.ID);
 
                 if (func == null)
-                    throw new Exception(String.Format("Id não encontrado {0}.", dto.IDFUNCAO));
+                    throw new Exception(String.Format("Id não encontrado {0}.", dto.ID));
 
                 AtualizarObjeto(ct, dto, ref func);
                 ct.SaveChanges();

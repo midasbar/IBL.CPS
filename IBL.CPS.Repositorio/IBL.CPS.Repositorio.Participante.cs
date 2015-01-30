@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new ParticipanteDTO()
             {
-                IDPARTICIPANTE = f.IDPARTICIPANTE,
+                ID = f.IDPARTICIPANTE,
                 IDCASAL = f.IDCASAL,
                 IDGRUPO = f.IDGRUPO,
                 FUNCAO_NA_EPOCA = f.FUNCAO_NA_EPOCA

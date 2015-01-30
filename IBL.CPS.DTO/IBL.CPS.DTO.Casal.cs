@@ -11,7 +11,7 @@ namespace IBL.CPS.DTO
     public class CasalDTO
     {
         [DataMember]
-        public int IDCASAL { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public int IDMARIDO { get; set; }
@@ -42,5 +42,17 @@ namespace IBL.CPS.DTO
 
         [DataMember]
         public string CEP { get; set; }
+
+        [DataMember]
+        public string NOMEMARIDO { get; set; }
+        
+        [DataMember]
+        public string NOMEESPOSA { get; set; }
     }
+    
+    public class CasalFTR
+    {
+        public string descricao { get; set; }
+    }
+    
 }

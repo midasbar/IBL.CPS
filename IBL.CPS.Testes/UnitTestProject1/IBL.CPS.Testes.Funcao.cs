@@ -12,11 +12,12 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteObterListaFiltrada()
         {
-            var l = ControladorFuncao.ObterLista("lider");
+            var filtro = new FuncaoFTR(){descricao = "lider"};
+            var l = ControladorFuncao.ObterLista(filtro);
             Assert.IsTrue(l.Count == 3);
         }
         
-        public void TesteObterLista()
+        public void TesteObterLista(null)
         {
             var l = ControladorFuncao.ObterLista(null);
             Assert.IsTrue(l.Count == 7);
@@ -46,7 +47,7 @@ namespace IBL.CPS.Testes
         public void TesteExcluir()
         {
             var l = ControladorFuncao.ObterLista(null);
-            l = l.Where(f => f.IDFUNCAO > 7).ToList();
+            l = l.Where(f => f.ID > 7).ToList();
             
             var qi = l.Count;
 
@@ -54,14 +55,14 @@ namespace IBL.CPS.Testes
             {
                 try
                 {
-                    ControladorFuncao.Excluir(d.IDFUNCAO);
+                    ControladorFuncao.Excluir(d.ID);
                     qi--;
                 }
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
             }
 
             l = ControladorFuncao.ObterLista(null);
-            l = l.Where(f => f.IDFUNCAO > 7).ToList();
+            l = l.Where(f => f.ID > 7).ToList();
             Assert.AreEqual(qi, l.Count);
         }  
     }

@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 namespace IBL.CPS.DTO
 {
     [DataContract]
-    public class FuncaoDTO
+    public class FuncaoDTO :IDTO
     {
         [DataMember]
-        public int IDFUNCAO { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public string DESCRICAO { get; set; }
+    }
+
+    public class FuncaoFTR {
+        public string descricao { get; set; }
     }
 }

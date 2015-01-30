@@ -8,12 +8,18 @@ using System.Threading.Tasks;
 namespace IBL.CPS.DTO
 {
     [DataContract]
-    public class TipoGrupoDTO
+    public class TipoGrupoDTO : IDTO
     {
         [DataMember]
-        public int IDTIPOGRUPO { get; set; }
+        public int ID { get; set; }
 
         [DataMember]
         public string DESCRICAO { get; set; }
     }
+
+    public class TipoGrupoFTR
+    {
+        public string descricao { get; set; }
+    }
+
 }

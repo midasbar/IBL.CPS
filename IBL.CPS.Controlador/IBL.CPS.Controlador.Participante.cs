@@ -46,7 +46,7 @@ namespace IBL.CPS.Controlador
 
         static public void Gravar(ParticipanteDTO dto)
         {
-            if (dto.IDPARTICIPANTE == 0)
+            if (dto.ID == 0)
                 throw new Exception("Objeto não possui Id. Inválido para gravação.");
 
             String erros = null;
@@ -55,10 +55,10 @@ namespace IBL.CPS.Controlador
 
             using (var ct = new dbCPSEntities())
             {
-                PARTICIPANTE func = ObterEntidade(ct, dto.IDPARTICIPANTE);
+                PARTICIPANTE func = ObterEntidade(ct, dto.ID);
 
                 if (func == null)
-                    throw new Exception(String.Format("Id não encontrado {0}.", dto.IDPARTICIPANTE));
+                    throw new Exception(String.Format("Id não encontrado {0}.", dto.ID));
 
                 AtualizarObjeto(ct, dto, ref func);
                 ct.SaveChanges();

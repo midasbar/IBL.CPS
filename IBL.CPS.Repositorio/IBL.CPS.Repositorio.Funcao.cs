@@ -14,7 +14,7 @@ namespace IBL.CPS.Repositorio
             if (f == null) return null;
             return new FuncaoDTO()
             {
-                IDFUNCAO = f.IDFUNCAO,
+                ID = f.IDFUNCAO,
                 DESCRICAO = f.DESCRICAO, //Pode ou não ter esta virgula pois é uma lista de parametros 
             };
 

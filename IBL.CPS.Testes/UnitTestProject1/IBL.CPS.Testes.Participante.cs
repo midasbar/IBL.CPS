@@ -9,9 +9,9 @@ namespace IBL.CPS.Testes
     public class TestesParticipante
     {
         [TestMethod]
-        public void TesteObterLista()
+        public void TesteObterLista(null)
         {
-            var l = ControladorParticipante.ObterLista();
+            var l = ControladorParticipante.ObterLista(null);
             Assert.IsTrue(l.Count == 0);
         }
 
@@ -19,13 +19,13 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteIncluir()
         {
-            var l = ControladorParticipante.ObterLista();
+            var l = ControladorParticipante.ObterLista(null);
 
             var qi = l.Count;
 
 
             //Inclui pessoas usadas no teste...
-            var p = ControladorPessoa.ObterLista();
+            var p = ControladorPessoa.ObterLista(null);
             if (p.Count == 0)
             {
                 var dp = new PessoaDTO();
@@ -55,7 +55,7 @@ namespace IBL.CPS.Testes
 
             }
             //inclui casal usado no teste
-            var c = ControladorCasal.ObterLista();
+            var c = ControladorCasal.ObterLista(null);
             if (c.Count == 0)
             {
                 for (int i = 0; i < 2; i++)
@@ -85,7 +85,7 @@ namespace IBL.CPS.Testes
             }
 
             //inclui grupo usado no teste
-            var g = ControladorGrupo.ObterLista();
+            var g = ControladorGrupo.ObterLista(null);
             if (g.Count == 0)
             {
                 for (int i = 0; i < 10; i++)
@@ -117,7 +117,7 @@ namespace IBL.CPS.Testes
                 ControladorParticipante.Incluir(d);
             }
 
-            l = ControladorParticipante.ObterLista();
+            l = ControladorParticipante.ObterLista(null);
 
             Assert.AreEqual(qi + 10, l.Count);
         }
@@ -125,7 +125,7 @@ namespace IBL.CPS.Testes
         [TestMethod]
         public void TesteExcluir()
         {
-            var l = ControladorParticipante.ObterLista();
+            var l = ControladorParticipante.ObterLista(null);
 
             var qi = l.Count;
 
@@ -139,7 +139,7 @@ namespace IBL.CPS.Testes
                 catch (Exception ex) { Console.WriteLine(ex.Message); }
             }
 
-            l = ControladorParticipante.ObterLista();
+            l = ControladorParticipante.ObterLista(null);
             Assert.AreEqual(qi, l.Count);
         }
 

@@ -12,7 +12,7 @@ namespace IBL.CPS.Controlador
 {
     static public class ControladorTipoGrupo
     {
-        static public List<TipoGrupoDTO> ObterLista(String fdesc)
+        static public List<TipoGrupoDTO> ObterLista(TipoGrupoFTR Filtro)
         {
             IQueryable<TIPOGRUPO> e = null;
             List<TipoGrupoDTO> r = null;
@@ -20,8 +20,8 @@ namespace IBL.CPS.Controlador
             {
                 e = ct.TIPOGRUPO;
                
-                if (!String.IsNullOrEmpty(fdesc))
-                e = e.Where(x => x.DESCRICAO.ToUpper().Contains(fdesc.ToUpper()));
+                if (!String.IsNullOrEmpty(Filtro.descricao))
+                e = e.Where(x => x.DESCRICAO.ToUpper().Contains(Filtro.descricao.ToUpper()));
 
                 r = e.ToList().ConvertAll(x => (TipoGrupoDTO)x);
             }
@@ -48,7 +48,7 @@ namespace IBL.CPS.Controlador
 
         static public void Gravar(TipoGrupoDTO dto)
         {
-            if (dto.IDTIPOGRUPO == 0)
+            if (dto.ID == 0)
                 throw new Exception("Objeto não possui Id. Inválido para gravação.");
 
             String erros = null;
@@ -57,10 +57,10 @@ namespace IBL.CPS.Controlador
 
             using (var ct = new dbCPSEntities())
             {
-                TIPOGRUPO func = ObterEntidade(ct, dto.IDTIPOGRUPO);
+                TIPOGRUPO func = ObterEntidade(ct, dto.ID);
 
                 if (func == null)
-                    throw new Exception(String.Format("Id não encontrado {0}.", dto.IDTIPOGRUPO));
+                    throw new Exception(String.Format("Id não encontrado {0}.", dto.ID));
 
                 AtualizarObjeto(ct, dto, ref func);
                 ct.SaveChanges();
